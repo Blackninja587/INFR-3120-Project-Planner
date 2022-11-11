@@ -1,4 +1,4 @@
-let mongoose = require('mongoose');
+var mongoose = require('mongoose');
 // create an assignment model
 let workModel = mongoose.Schema({
     professor: String,

@@ -2,10 +2,10 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-let Work = require('../models/work');
+let work = require('../models/work');
 
 router.get('/', (req,res,next) =>{
-    Work.find((err, Assignments)=>{
+    work.find((err, Assignments)=>{
         if(err)
         {
             return console.error(err);
