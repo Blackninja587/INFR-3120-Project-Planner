@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 // create an assignment model
 let workModel = mongoose.Schema({
-    professor: String,
-    class: String,
     assignment: String,
-    due_date: String,
+    class: String,
     description: String,
+    due_date: String,
+    professor: String,
     },
     {
         collection: "Assignments"
