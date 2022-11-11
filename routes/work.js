@@ -14,7 +14,7 @@ router.get('/', (req,res,next) =>{
         {
             res.render('work',{
                 title: 'Assignments',
-                Assignments: assignments
+                Assignments: Assignments
             })
         }
     });

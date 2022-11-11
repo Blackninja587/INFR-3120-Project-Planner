@@ -1,0 +1,33 @@
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="/">Project Plan</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+
+        <!-- Home Page Tab -->
+        <li class="nav-item">
+        <% if (title == "index") { %>
+            <a class="nav-link active" href="/home">
+        <% } else { %>
+            <a class="nav-link" href="/home">
+        <% } %>
+            <i class="fa-solid fa-house-chimney"></i>Home</a> 
+        </li>
+
+        <!-- Project Planner Page Tab -->
+        <li class="nav-item">
+        <% if (title == "Work") { %>
+            <a class="nav-link active" href="/work">
+        <% } else { %>
+            <a class="nav-link" href="/work">
+        <% } %>
+            <i class="fa-solid fa-ghost"></i>Work</a>
+        </li>
+        </ul>
+    </div>
+    </div>
+</nav>
