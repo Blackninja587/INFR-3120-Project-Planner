@@ -10,7 +10,7 @@
 
         <!-- Home Page Tab -->
         <li class="nav-item">
-        <% if (title == "index") { %>
+        <% if ((typeof title != "undefined" ? title : "") == "index") { %>
             <a class="nav-link active" href="/">
         <% } else { %>
             <a class="nav-link" href="/">
@@ -20,7 +20,7 @@
 
         <!-- Project Planner Page Tab -->
         <li class="nav-item">
-        <% if (title == "Work") { %>
+        <% if ((typeof title != "undefined" ? title : "") == "Work") { %>
             <a class="nav-link active" href="/work">
         <% } else { %>
             <a class="nav-link" href="/work">

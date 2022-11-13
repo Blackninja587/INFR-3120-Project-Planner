@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-const app = require('./config/app', './config/db');
+const app = require('./server/config/app', './server/config/db');
 const debug = require('debug')('project-plan:server');
 const http = require('http');
 

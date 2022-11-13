@@ -1,0 +1,34 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/top_nav.ejs %>
+<!-- Main Content -->
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-10">
+                <h1><%= title %></h1>
+                <br>
+                <table class="table table-bordered table-striped table-hover">
+                    <tr class="d-flex">
+                        <th class="text-center col-2"> Professor </th>
+                        <th class="text-center col-2"> Class </th>
+                        <th class="text-center col-3"> Assignment </th>
+                        <th class="text-center col-2"> Due_Date </th>
+                        <th class="text-center col-6"> Description </th>
+                    </tr>
+                    <!-- Repeat the template-->
+                    <% for(let count=0; count < Assignments.length; count++) { %>
+                        <tr class="d-flex">
+                            <td class="text-center col-2"><% Assignments[count].professor %></td>
+                            <td class="text-center col-2"><% Assignments[count].class %></td>
+                            <td class="text-center col-3"><% Assignments[count].assignment %></td>
+                            <td class="text-center col-2"><% Assignments[count].due_date %></td>
+                            <td class="text-center col-6"><% Assignments[count].description %></td>
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+<%- include ../partials/bottom_nav.ejs %>
+<%- include ../partials/footer.ejs %>

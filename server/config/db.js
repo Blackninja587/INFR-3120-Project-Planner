@@ -3,7 +3,7 @@ const url = `mongodb+srv://admin:BlackNinjafiveeightseven@base-cluster.nnrhjs8.m
 
 mongoose.connect(url)
     .then( () => {
-        console.log('Connected to the database ')
+        console.log('Connected to MongoDB Atlas ')
     })
     .catch( (err) => {
         console.error(`Error connecting to the database. n${err}`);
