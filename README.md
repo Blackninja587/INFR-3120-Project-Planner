@@ -20,3 +20,4 @@ Everything Listed above are different dependecies used and referenced within thi
 This application would not be possible without the usage of these outside sources.
 
 Website link: https://infr-3120-project-planner.azurewebsites.net/
+Github Repository link: https://github.com/Blackninja587/INFR-3120-Project-Planner
