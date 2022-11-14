@@ -1,47 +1,9 @@
 @charset "UTF-8";
-body {
+
+.main {
     background-color: rgb(255, 255, 191);
-    margin: 0px;
-    padding: 0px;
 }
 
-.top {
-    padding-left: 20px;
-    margin: 20px;
-}
-
-#header {
-    background-color: rgb(52, 91, 125);
-    padding: 0px 0px;
-    color: white;
-}
-
-#header a{
-    position: relative;
-    top: 20px;
-    color: white;
-}
-
-#header nav{
-    height: 60px;
-}
-
-#header ul{
-    text-align: center;
-}
-
-#header ul li{
-    display: inline-block;
-    list-style: none;
-    margin-left: 15px;
-}
-
-
-.logo img{
-    width: 80px;
-}
-
-#banner {
-    padding: 0px;
-    margin: 20px;
+.container {
+    background-color: white;
 }

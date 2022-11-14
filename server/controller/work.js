@@ -20,7 +20,7 @@ module.exports.displayAssignments =  (req,res,next) =>{
 
 module.exports.displayAddPage = (req,res,next) =>{
     res.render('assignments/add', {
-        title: 'Add Assignment'
+        title: 'Add an Assignment'
     });
 };
 
@@ -55,7 +55,7 @@ module.exports.displayEditPage = (req,res,next) =>{
         }
         else
         {
-            res.render('assignments/edit', {title: 'Edit Assignment', work: workToEdit});
+            res.render('assignments/edit', {title: 'Edit an Assignment', work: workToEdit});
         }
     });
 };
