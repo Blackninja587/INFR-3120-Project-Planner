@@ -1,4 +1,5 @@
-
+// Creating variables before calling them
+let button;
 (function(){
     function Start()
     {
@@ -12,6 +13,7 @@
                 if(!confirm('Are you sure you wish to procede?'))
                 {
                     event.preventDefault();
+                    alert('Selection has been deleted');
                     window.location.assign('/work')
                 }
             })
