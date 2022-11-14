@@ -2,6 +2,7 @@ let express = require('express');
 let router = express.Router();
 let Work = require('../models/work');
 
+// GET route for the Work list
 module.exports.displayAssignments =  (req,res,next) =>{
     Work.find((err, Assignments)=>{
         if(err)
@@ -18,12 +19,14 @@ module.exports.displayAssignments =  (req,res,next) =>{
     });
 };
 
+// GET route for displaying the Add-page -- Create Operation
 module.exports.displayAddPage = (req,res,next) =>{
     res.render('assignments/add', {
         title: 'Add an Assignment'
     });
 };
 
+// POST route for displaying the Add-page -- Create Operation
 module.exports.renderAddPage = (req,res,next) =>{
     let newAssignment = Work ({
     "assignment": req.body.assignment,
@@ -45,6 +48,7 @@ module.exports.renderAddPage = (req,res,next) =>{
     });
 };
 
+// GET route for displaying the Edit operation -- Update Operation
 module.exports.displayEditPage = (req,res,next) =>{
     let id = req.params.id;
     Work.findById(id,(err,workToEdit) => {
@@ -60,6 +64,7 @@ module.exports.displayEditPage = (req,res,next) =>{
     });
 };
 
+// POST route for displaying the Edit operation -- Update Operation
 module.exports.renderEditPage =  (req,res,next) =>{
     let id = req.params.id;
     let updateWork = Work ({
@@ -83,6 +88,7 @@ module.exports.renderEditPage =  (req,res,next) =>{
     });
 };
 
+// Delete Operation
 module.exports.deleteAssignments = (req,res,next) =>{
     let id = req.params.id;
     Work.remove({_id:id}, (err) => {

@@ -2,22 +2,22 @@ let express = require('express');
 let router = express.Router();
 let workController = require('../controller/work')
 
-// GET route for the Work list
+// Routes to contoller for displaying Assignment page
 router.get('/',workController.displayAssignments)
 
-// GET route for displaying the Add-page -- Create Operation
+// Routes to controller for displaying Add page
 router.get('/add',workController.displayAddPage)
 
-// POST route for displaying the Add-page -- Create Operation
+// Routes to controller for rendering Add page
 router.post('/add',workController.renderAddPage)
 
-// GET route for displaying the Edit operation -- Update Operation
+// Routes to controller for displaying Edit page
 router.get('/edit/:id',workController.displayEditPage)
 
-// POST route for displaying the Edit operation -- Update Operation
+// Routes to controller for rendering Edit page
 router.post('/edit/:id',workController.renderEditPage)
 
-// Delete Operation
+// Routes to controller for deleting
 router.get('/delete/:id',workController.deleteAssignments)
 
 

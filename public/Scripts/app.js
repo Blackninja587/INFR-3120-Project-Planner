@@ -1,7 +1,8 @@
+
 (function(){
     function Start()
     {
-        console.log('Connection Succesful, Welcome.');
+        console.log('Connection Succesful,', ' Welcome to my web-page');
 
         // Adding delete button query
         let deleteButtons = document.querySelectorAll('.btn-danger')

@@ -17,6 +17,7 @@ mongoDB.once('open', () => {
   console.log('Connected to MongodDB');
 });
 
+// connecting to routing pages
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let workRouter = require('../routes/work');
@@ -34,6 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
+// webpage url tags, to route to different pages
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/work', workRouter);

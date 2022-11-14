@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 
-// create an assignment model
+// Assignment Scheme, layout and format of data table
 let workModel = mongoose.Schema({
     professor: String,
     class: String,
@@ -13,4 +13,5 @@ let workModel = mongoose.Schema({
         collection: "Assignments"
     }
 );
+
 module.exports = mongoose.model('Work', workModel);
