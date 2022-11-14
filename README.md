@@ -1,4 +1,5 @@
-# project-plan
+# INFR-3120 Web & Script Programming Project Planner
+by Samuel Brangman
 
 References: 
 
@@ -17,3 +18,5 @@ References:
 
 Everything Listed above are different dependecies used and referenced within this application. 
 This application would not be possible without the usage of these outside sources.
+
+Website link: https://infr-3120-project-planner.azurewebsites.net/
