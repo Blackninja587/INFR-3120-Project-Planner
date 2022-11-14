@@ -1,28 +1,52 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/top_nav.ejs %>
+
 <!-- Main Content -->
 <main>
     <div class="container">
         <div class="row">
-            <div class="col-md-offset-3 col-md-10">
+            <div class="col-md-offset-3 col-md-11">
                 <h1><%= title %></h1>
-                <br>
+                
+                <!-- Add Button -->
+                <a href="work/add" class="btn btn-success" role="button">
+                    <i class="fas fa-plus-circle"></i> Add an Assignment </a>
+                <br><br>
+
+                <!-- Data Table -->
                 <table class="table table-bordered table-striped table-hover">
                     <tr class="d-flex">
                         <th class="text-center col-2"> Professor </th>
-                        <th class="text-center col-2"> Class </th>
-                        <th class="text-center col-3"> Assignment </th>
-                        <th class="text-center col-2"> Due_Date </th>
-                        <th class="text-center col-6"> Description </th>
+                        <th class="text-center col-3"> Class </th>
+                        <th class="text-center col-2"> Assignment </th>
+                        <th class="text-center col-1"> Due Date </th>
+                        <th class="text-center col-2"> Description </th>
+                        <th class="text-center col-1"></th> <!-- Edit button space -->
+                        <th class="text-center col-1"></th> <!-- Ddelete button space -->
                     </tr>
+
                     <!-- Repeat the template-->
                     <% for(let count=0; count < Assignments.length; count++) { %>
                         <tr class="d-flex">
-                            <td class="text-center col-2"><% Assignments[count].professor %></td>
-                            <td class="text-center col-2"><% Assignments[count].class %></td>
-                            <td class="text-center col-3"><% Assignments[count].assignment %></td>
-                            <td class="text-center col-2"><% Assignments[count].due_date %></td>
-                            <td class="text-center col-6"><% Assignments[count].description %></td>
+                            <td class="text-center col-2"><%= Assignments[count].professor %></td>
+                            <td class="text-center col-3"><%= Assignments[count].class %></td>
+                            <td class="text-center col-2"><%= Assignments[count].assignment %></td>
+                            <td class="text-center col-1"><%= Assignments[count].due_date %></td>
+                            <td class="text-center col-2"><%= Assignments[count].description %></td>
+
+                            <!-- Edit Button -->
+                            <td class="text-center col-1">
+                                <a href="/work/edit/<%= Assignments[count]._id %>" 
+                                    class="btn btn-primary"> 
+                                    <i class="fa-sharp fa-solid fa-pencil"></i> Edit </a>
+                            </td>
+
+                            <!-- Delete Button-->
+                            <td class="text-center col-1">
+                                <a href="/work/delete/<%= Assignments[count]._id %>" 
+                                    class="btn btn-danger">
+                                    <i class="fa-solid fa-trash-alt"></i> Delete </a>
+                            </td>
                         </tr>
                     <% } %>
                 </table>

@@ -3,13 +3,13 @@ const url = `mongodb+srv://admin:BlackNinjafiveeightseven@base-cluster.nnrhjs8.m
 
 mongoose.connect(url)
     .then( () => {
-        console.log('Connected to MongoDB Atlas ')
+        console.log('Connected to MongoDB Atlas')
     })
     .catch( (err) => {
         console.error(`Error connecting to the database. n${err}`);
-    }) 
+    });
 
-    module.exports = 
+module.exports = 
     {
-        "URI" : "mongodb+srv://admin:BlackNinjafiveeightseven@base-cluster.nnrhjs8.mongodb.net/?retryWrites=true&w=majority"
-    }
+        'URI' : 'mongodb+srv://admin:BlackNinjafiveeightseven@base-cluster.nnrhjs8.mongodb.net/?retryWrites=true&w=majority'
+    };
