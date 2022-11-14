@@ -13,7 +13,7 @@ let button;
                 if(!confirm('Are you sure you wish to procede?'))
                 {
                     event.preventDefault();
-                    alert('Selection has been deleted');
+                    alert('Deletion Cancelled');
                     window.location.assign('/work')
                 }
             })
