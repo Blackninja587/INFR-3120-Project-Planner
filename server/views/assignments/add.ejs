@@ -2,71 +2,75 @@
 <%- include ../partials/top_nav.ejs %>
 
 <!-- Add page -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-offset-3 col-md-6">
-        <h1><%= title %></h1>
-        <form class="form" method="post">
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+            <h1><%= title %></h1>
+            <form class="form" method="post">
 
-            <!-- Professor Form -->
-            <div class="form-group">
-                <label for="professorTextField"> Professor </label>
-                <input type="text" class="form-control"
-                    id="professorTextField"
-                    placeholder="Enter Professor full name"
-                    name="professor" required>
+                <!-- Professor Form -->
+                <div class="form-group">
+                    <label for="professorTextField"> Professor </label>
+                    <input type="text" class="form-control"
+                        id="professorTextField"
+                        placeholder="Enter Professor full name"
+                        name="professor" required>
+                </div>
+
+                <!-- Class Form -->
+                <div class="form-group">
+                    <label for="classTextField"> Class </label>
+                    <input type="text" class="form-control"
+                        id="classTextField"
+                        placeholder="Enter class name"
+                        name="class" required>
+                </div>
+
+                <!-- Assignment Form -->
+                <div class="form-group">
+                    <label for="assignmentTextField"> Assignment </label>
+                    <input type="text" class="form-control"
+                        id="assignmentTextField"
+                        placeholder="Enter assignment name"
+                        name="assignment" required>
+                </div>
+
+                <!-- Due Date Form -->
+                <div class="form-group">
+                    <label for="due_dateTextField"> Due Date </label>
+                    <input type="text" class="form-control"
+                        id="due_dateTextField"
+                        placeholder="00-00-0000"
+                        name="due_date" required>
+                </div>
+
+                <!-- Description Form -->
+                <div class="form-group">
+                    <label for="descriptionTextField"> Description </label>
+                    <textarea type="text" class="form-control"
+                        id="descriptionTextField"
+                        placeholder="Enter brief description"
+                        name="description" required></textarea>
+                </div>
+                <br>
+
+                <!-- Submit button -->
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit
+                </button>
+
+                <!-- Cancel button-->
+                <a href="/work" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel 
+                </a>
+
+            <br><br><br><br><br><br><br><br><br><br><br>
+            </form>
             </div>
-
-            <!-- Class Form -->
-            <div class="form-group">
-                <label for="classTextField"> Class </label>
-                <input type="text" class="form-control"
-                    id="classTextField"
-                    placeholder="Enter class name"
-                    name="class" required>
-            </div>
-
-            <!-- Assignment Form -->
-            <div class="form-group">
-                <label for="assignmentTextField"> Assignment </label>
-                <input type="text" class="form-control"
-                    id="assignmentTextField"
-                    placeholder="Enter assignment name"
-                    name="assignment" required>
-            </div>
-
-            <!-- Due Date Form -->
-            <div class="form-group">
-                <label for="due_dateTextField"> Due Date </label>
-                <input type="text" class="form-control"
-                    id="due_dateTextField"
-                    placeholder="00-00-0000"
-                    name="due_date" required>
-            </div>
-
-            <!-- Description Form -->
-            <div class="form-group">
-                <label for="descriptionTextField"> Description </label>
-                <textarea type="text" class="form-control"
-                    id="descriptionTextField"
-                    placeholder="Enter brief description"
-                    name="description" required></textarea>
-            </div>
-            <br>
-
-            <!-- Submit button -->
-            <button class="btn btn-primary" type="submit">
-                <i class="fas fa-edit"></i> Submit
-            </button>
-
-            <!-- Cancel button-->
-            <a href="/work" class="btn btn-warning">
-                <i class="fas fa-undo"></i> Cancel </a>
-        </form>
         </div>
     </div>
-</div>
-
-
+    <br><br><br><br><br>
+</main>
 <%- include ../partials/bottom_nav.ejs %>
 <%- include ../partials/footer.ejs %>

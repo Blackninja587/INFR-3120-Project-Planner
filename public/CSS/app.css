@@ -1,9 +1,21 @@
 @charset "UTF-8";
 
+body h1 {
+    color: rgb(151, 112, 77)/* thinking a type of beige, or beige compliment */;
+}
+
+body p {
+    color: black/* I want it to match the header colour */;
+}
+
+#clear {
+    clear: both;
+}
+
 .main {
-    background-color: rgb(255, 255, 191);
+    background-color: rgb(151, 112, 77);
 }
 
 .container {
-    background-color: white;
+    background-color: rgb(219, 207, 179);/* thinking a light warm background */;
 }

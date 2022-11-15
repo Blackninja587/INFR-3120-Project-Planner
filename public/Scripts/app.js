@@ -10,7 +10,12 @@ let button;
         for(button of deleteButtons)
         {
             button.addEventListener('click', (event)=> {
-                if(!confirm('Are you sure you wish to procede?'))
+                if(confirm('Are you sure you wish to procede?')) 
+                {
+                    alert('Selection Deleted');
+                    window.location.assign('/work')
+                }
+                else
                 {
                     event.preventDefault();
                     alert('Deletion Cancelled');
