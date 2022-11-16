@@ -1,3 +1,5 @@
+//The router function uses express, so both need pulled and defined here
+// workcontroller is a variable made in the controller/work file
 let express = require('express');
 let router = express.Router();
 let workController = require('../controller/work')
@@ -19,6 +21,5 @@ router.post('/edit/:id',workController.renderEditPage)
 
 // Routes to controller for deleting
 router.get('/delete/:id',workController.deleteAssignments)
-
 
 module.exports = router;

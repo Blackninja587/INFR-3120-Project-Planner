@@ -1,3 +1,4 @@
+//Mongoose is needed to reference the schema with my mongoDB database, and so it is pulled from node_modules
 let mongoose = require('mongoose');
 
 // Assignment Scheme, layout and format of data table

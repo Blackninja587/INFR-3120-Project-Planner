@@ -1,3 +1,4 @@
+// Defines the variables, pulling mongoose from node_modules and puling my mongoDB database from the url
 const mongoose = require('mongoose')
 const url = `mongodb+srv://admin:BlackNinjafiveeightseven@base-cluster.nnrhjs8.mongodb.net/?retryWrites=true&w=majority`;
 

@@ -1,1 +1,2 @@
+<!-- This file is used to keep certain folders from being tracked by github upon upload, and stay that way-->
 node_modules

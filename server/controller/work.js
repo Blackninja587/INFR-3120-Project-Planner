@@ -1,5 +1,4 @@
-let express = require('express');
-let router = express.Router();
+//Work is needed in this code, and is taken from ../models/work
 let Work = require('../models/work');
 
 // GET route for the Work list

@@ -19,7 +19,6 @@ mongoDB.once('open', () => {
 
 // connecting to routing pages
 let indexRouter = require('../routes/index');
-let usersRouter = require('../routes/users');
 let workRouter = require('../routes/work');
 
 let app = express();
@@ -37,7 +36,6 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 // webpage url tags, to route to different pages
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/work', workRouter);
 
 // catch 404 and forward to error handler
