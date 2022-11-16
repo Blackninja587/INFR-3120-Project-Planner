@@ -1,7 +1,15 @@
 @charset "UTF-8";
 
 body h1 {
-    color: rgb(151, 112, 77)/* thinking a type of beige, or beige compliment */;
+    color: rgb(151, 112, 77);
+    font-family: 'Aboreto';
+    text-align: center;
+}
+
+body p {
+    color: rgb(125, 93, 64);
+    font-family: 'Aboreto';
+    text-align: center;
 }
 
 .main {
@@ -9,5 +17,5 @@ body h1 {
 }
 
 .container {
-    background-color: rgb(219, 207, 179);/* thinking a light warm background */;
+    background-color: rgb(219, 207, 179);
 }
