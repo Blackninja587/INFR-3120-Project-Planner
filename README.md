@@ -23,6 +23,7 @@ https://joannarahier.com/35-free-printable-planner-templates/
 <br>
 The above link is the location I got my free image on my splash page.
 <br>
+<br>
 Website link: https://infr-3120-project-planner.azurewebsites.net/
 <br>
 Github Repository link: https://github.com/Blackninja587/INFR-3120-Project-Planner
