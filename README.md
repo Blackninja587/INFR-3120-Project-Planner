@@ -19,6 +19,10 @@ References:
 Everything Listed above are different dependecies used and referenced within this application. 
 This application would not be possible without the usage of these outside sources.
 
+https://joannarahier.com/35-free-printable-planner-templates/
+<br>
+The above link is the location I got my free image on my splash page.
+<br>
 Website link: https://infr-3120-project-planner.azurewebsites.net/
 <br>
 Github Repository link: https://github.com/Blackninja587/INFR-3120-Project-Planner
