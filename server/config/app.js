@@ -4,6 +4,11 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
 
 // configure MongoDB 
 let mongoose = require('mongoose');
@@ -17,8 +22,13 @@ mongoDB.once('open', () => {
   console.log('Connected to MongodDB');
 });
 
+// creating a user model instance
+let userModel = require('../models/user')
+let user = userModel.User
+
 // connecting to routing pages
 let indexRouter = require('../routes/index');
+let usersRouter = require('../routes/users');
 let workRouter = require('../routes/work');
 
 let app = express();
@@ -36,7 +46,26 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 // webpage url tags, to route to different pages
 app.use('/', indexRouter);
+app.use('/users', usersRouter);
 app.use('/work', workRouter);
+
+// setting up Express Session
+app.use(session({
+  secret: "password",
+  saveUninitialized: false,
+  resave: false
+}))
+
+// initialising Flash
+app.use(flash())
+
+// initialising Passport
+app.use(passport.initialize())
+app.use(passport.session())
+
+// serialising and deserialising user information
+passport.serializeUser(user.serializeUser())
+passport.deserializeUser(user.deserializeUser())
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
