@@ -24,7 +24,7 @@ mongoDB.once('open', () => {
 
 // creating a user model instance
 let userModel = require('../models/user')
-let user = userModel.User
+let User = userModel.User
 
 // connecting to routing pages
 let indexRouter = require('../routes/index');
@@ -59,13 +59,18 @@ app.use(session({
 // initialising Flash
 app.use(flash())
 
+// implimenting User Authentication
+*
+//passport.use(User.createStrategy);
+
 // initialising Passport
 app.use(passport.initialize())
 app.use(passport.session())
 
 // serialising and deserialising user information
-passport.serializeUser(user.serializeUser())
-passport.deserializeUser(user.deserializeUser())
+*
+//passport.serializeUser(User.serializeUser())
+//passport.deserializeUser(User.deserializeUser())
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -12,7 +12,8 @@ module.exports.displayAssignments =  (req,res,next) =>{
         {
             res.render('assignments/work-list',{
                 title: 'Assignments',
-                Assignments: Assignments
+                Assignments: Assignments,
+                displayName: req.user ? req.user.displayName: ''
             });
         }
     });
@@ -21,7 +22,8 @@ module.exports.displayAssignments =  (req,res,next) =>{
 // GET route for displaying the Add-page -- Create Operation
 module.exports.displayAddPage = (req,res,next) =>{
     res.render('assignments/add', {
-        title: 'Add an Assignment'
+        title: 'Add an Assignment',
+        displayName: req.user ? req.user.displayName: ''
     });
 };
 
@@ -58,7 +60,11 @@ module.exports.displayEditPage = (req,res,next) =>{
         }
         else
         {
-            res.render('assignments/edit', {title: 'Edit an Assignment', work: workToEdit});
+            res.render('assignments/edit', {
+                title: 'Edit an Assignment', 
+                work: workToEdit,
+                displayName: req.user ? req.user.displayName: ''
+            });
         }
     });
 };
@@ -98,7 +104,7 @@ module.exports.deleteAssignments = (req,res,next) =>{
         }
         else
         {
-            res.redirect('/work');
+            res.redirect('/work',);
         }
     });
 };
