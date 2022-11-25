@@ -5,7 +5,7 @@ let User = userModel.User;
 
 
 // This controller exports the function displayHomePage to index.js, where the route extension is given
-module.exports.displayHomePage = (req, res, next) => {
+module.exports.displayHomePage = (req, res) => {
     res.render('index', {
       title: 'Home',
       displayName: req.user ? req.user.displayName: ''
@@ -15,7 +15,7 @@ module.exports.displayHomePage = (req, res, next) => {
 
 // This controller exports the the login page if the person accesssing it is NOT a user, if they are, they are directed to the LoginPage
 // If they ARE a user, they are directed to the Home Page /index.ejs
-module.exports.displayLoginPage = (req, res, next) => {
+module.exports.displayLoginPage = (req, res) => {
   if(!req.user)
   {
     res.render('auth/login',
@@ -27,12 +27,12 @@ module.exports.displayLoginPage = (req, res, next) => {
   }
   else
   {
-    return res.redirect('/')
+    return res.redirect('/');
   }
 };
 // This controller handles processing error pages and the User login page. If successful, will take them to /work-list.ejs
 module.exports.processLoginPage = (req, res, next) => {
-  passport.authenticate('local', (err, user, info) => {
+  passport.authenticate('local', (err, user) => {
     // is there a server error?
     if(err){return next(err)}
     // is there a user error?
@@ -46,14 +46,14 @@ module.exports.processLoginPage = (req, res, next) => {
       {
         return next(err)
       }
-      return res.redirect('/work-list');
+      return res.redirect('/');
     })
   })(req, res, next)
 };
 
 
 // This controller is the same as displayLoginPage, but for the registration page
-module.exports.displayRegisterPage = (req, res, next) => {
+module.exports.displayRegisterPage = (req, res) => {
   if(!req.user)
   {
     res.render('auth/register',
@@ -69,14 +69,14 @@ module.exports.displayRegisterPage = (req, res, next) => {
   }
 };
 // This controller allows a user to put in their registration details to be used to enter the site
-module.exports.processRegisterPage = (req, res, next) => {
+module.exports.processRegisterPage = (req, res) => {
   let newUser = new User({
     username: req.body.username,
-    password: req.body.password,
+    // password: req.body.password,
     email: req.body.email,
     displayName: req.body.displayName
-  });
-  User.register(newUser, req.body.password, (err) => {
+  })
+  User.register(newUser, req.body.password, (err) =>{
     if(err)
     {
       console.log('Error: Adding new user')
@@ -90,13 +90,13 @@ module.exports.processRegisterPage = (req, res, next) => {
         title: 'Registration Page',
         message: req.flash('registerMessage'),
         displayName: req.user ? req.user.displayName: ''
-      });
+      })
     }
     else
     {
-      // if the registration is successful
+      // if the registration is unsuccessful
       return passport.authenticate('local')(req, res, ()=> {
-        res.redirect('/work-list');
+        res.redirect('/');
       })
     }
   })

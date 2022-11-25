@@ -6,8 +6,8 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let session = require('express-session');
 let passport = require('passport');
-let passportLocal = require('passport-local');
-let localStrategy = passportLocal.Strategy;
+
+
 let flash = require('connect-flash');
 
 // configure MongoDB 
@@ -53,7 +53,7 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 // setting up Express Session
 app.use(session({
-  secret: 'password',
+  secret: 'secrets',
   saveUninitialized: false,
   resave: false
 }))
@@ -64,33 +64,20 @@ app.use('/users', usersRouter);
 app.use('/work', workRouter);
 
 // implimenting User Authentication
-passport.use(new localStrategy({
-  usernameField: 'email',
-  passwordField: 'password',
-  session: false
-  },
-  function(username, password, done) {
-    // ...
-  }
-));
+passport.use(User.createStrategy());
 
 // serialising and deserialising user information
-passport.serializeUser(function(user, done) {
-  done(null, user.id); 
-});
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-      done(err, user);
-  });
-});
+passport.serializeUser(User.serializeUser())
+passport.deserializeUser(User.deserializeUser())
+
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function(next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

@@ -1,48 +1,47 @@
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-    <a class="navbar-brand" href="/">INFR-3120 Web & Script Programming Assignment 3</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto">
+        <a class="navbar-brand" href="/">INFR-3120 Web & Script Programming Assignment 3</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
 
-        <!-- Home Page Tab -->
-        <li class="nav-item">
-        <% if ((typeof title != "undefined" ? title : "")== "index") { %>
-            <a class="nav-link active" href="/">
-        <% } else { %>
-            <a class="nav-link" href="/">
-        <% } %>
-            <i class="fa-solid fa-house-chimney"></i>Home</a> 
-        </li>
+                <!-- Home Page Tab -->
+                <li class="nav-item">
+                <% if ((typeof title != "undefined" ? title : "")== "index") { %>
+                    <a class="nav-link active" href="/">
+                <% } else { %>
+                    <a class="nav-link" href="/">
+                <% } %>
+                    <i class="fa-solid fa-house-chimney"></i>Home</a> 
+                </li>
 
-        <!-- Project Planner Page Tab -->
-        <li class="nav-item">
-        <% if ((typeof title != "undefined" ? title : "") == "Work") { %>
-            <a class="nav-link active" href="/work">
-        <% } else { %>
-            <a class="nav-link" href="/work">
-        <% } %>
-            <i class="fa-solid fa-calendar"></i>Assignments</a>
-        </li>
+                <!-- Project Planner Page Tab -->
+                <li class="nav-item">
+                <% if ((typeof title != "undefined" ? title : "") == "Work") { %>
+                    <a class="nav-link active" href="/work">
+                <% } else { %>
+                    <a class="nav-link" href="/work">
+                <% } %>
+                    <i class="fa-solid fa-calendar"></i>Assignments</a>
+                </li>
 
-        <!-- User Name Display -->
-        <% if(typeof displayName=='string' && displayName) { %>
-            <li class="navbar-text">
-            <i class="fas fa-lg fa-user"></i>
-            Welcome, <%= displayName %> </li>
-            <li class="nav-item">
-            <a href="/logout" class="nav-link">
-            <i class="fas fa-lg fa-sign-out-user"></i>Logout</a></li>
-        <% } else { %>
-            <li class="nav-item">
-            <a href="/login" class="nav-link">
-            <i class="fas fa-lg fa-sign-in-alt"></i>Login</a></li>
-        <% } %>
-        </ul>
-    </div>
+                <!-- User Name Display -->
+            <% if(typeof displayName =='string' && displayName) { %>
+                <li class="navbar-text">
+                <i class="fas fa-lg fa-user"></i>
+                Welcome, <%= displayName %> </li>
+                <li class="nav-item">
+                <a href="/logout" class="nav-link">
+                <i class="fas fa-lg fa-sign-out-alt"></i>Logout</a></li>
+            <% } else { %>
+                <li class="nav-item">
+                    <a href="/login" class="nav-link">
+                    <i class="fas fa-lg fa-sign-in-alt"></i>Login</a></li>
+            <% } %>
+        </div>
     </div>
 </nav>
 <div class="main">
