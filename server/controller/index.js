@@ -34,11 +34,8 @@ module.exports.displayLoginPage = (req, res, next) => {
 module.exports.processLoginPage = (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     // is there a server error?
-    if(err)
-    {
-      return next(err)
-    }
-    // is there a user error
+    if(err){return next(err)}
+    // is there a user error?
     if(!user)
     {
       req.flash('loginMessage', 'AuthenticationError');
@@ -77,12 +74,12 @@ module.exports.processRegisterPage = (req, res, next) => {
     username: req.body.username,
     password: req.body.password,
     email: req.body.email,
-    displayName: req.boy.displayName
-  })
-  User.registser(newUser, req.body.password, (err) => {
+    displayName: req.body.displayName
+  });
+  User.register(newUser, req.body.password, (err) => {
     if(err)
     {
-      console.log('Error: Adding new user');
+      console.log('Error: Adding new user')
       if(err.name=="UserExistsError")
       {
         req.flash('registerMessage',
@@ -97,9 +94,9 @@ module.exports.processRegisterPage = (req, res, next) => {
     }
     else
     {
-      // if the registration is unsuccessful
+      // if the registration is successful
       return passport.authenticate('local')(req, res, ()=> {
-        res.redirect('work-list');
+        res.redirect('/work-list');
       })
     }
   })
